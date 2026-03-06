@@ -20,7 +20,7 @@ This Terraform project deploys a Windows server in AWS and automatically install
 - Create a `terraform.tfvars` and set the variables to match your environment.
 ```
 aws_region ="us-east-1"
-password = "" // Only set a value if you don't want a randomly generated password for the domain controller, otherwise the password set here will be used. Make sure it conforms to Microsoft Complexity Requirements.
+password = "" // Only set a **value** if you don't want a randomly generated password for the domain controller. Make sure the password conforms to Microsoft Complexity Requirements if set manually.
 domain_name = "adldap.lab"
 instance_type = "t3.medium"
 ```
@@ -28,7 +28,7 @@ instance_type = "t3.medium"
 ### Deploy
 - `terraform apply`
 - It takes around 10 - 15 minutes for the deployment to complete.
-- Once complete, RDP connections to the EC2 instance is possible as well as sending LDAP and LDAPS queries.
+- Once complete, RDP connections to the EC2 instance are possible as well as sending LDAP and LDAPS queries.
 
 ### Destroy
 `terraform destroy`
